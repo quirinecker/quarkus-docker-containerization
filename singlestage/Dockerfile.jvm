@@ -1,0 +1,14 @@
+FROM maven:3.8.4-openjdk-11-slim
+
+WORKDIR /quarkus-app/
+
+COPY pom.xml ./
+
+RUN mvn clean install
+
+COPY . .
+
+RUN mvn -Dquarkus.package.type=uber-jar verify && \
+    mv target/*-runner.jar application.jar
+
+ENTRYPOINT ["java", "-jar", "application.jar"]
