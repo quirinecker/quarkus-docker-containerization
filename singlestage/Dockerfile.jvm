@@ -8,7 +8,7 @@ RUN mvn clean install
 
 COPY . .
 
-RUN mvn -Dquarkus.package.type=uber-jar verify && \
+RUN mvn -Dquarkus.package.type=uber-jar -DskipTests verify && \
     mv target/*-runner.jar application.jar
 
 ENTRYPOINT ["java", "-jar", "application.jar"]
