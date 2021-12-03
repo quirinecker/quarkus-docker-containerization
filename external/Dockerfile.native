@@ -1,0 +1,9 @@
+FROM ubuntu:impish-20211102
+
+WORKDIR /app
+
+COPY target/*-runner application
+
+RUN ls -la && chmod +x ./application
+
+CMD ["./application"]
