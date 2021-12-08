@@ -21,4 +21,4 @@ RUN export GRAALVM_HOME=/opt/graalvm && mvn verify -Pnative -DskipTests && mv ta
 
 EXPOSE 8080
 
-CMD ["./application"]
+ENTRYPOINT ["./application"]

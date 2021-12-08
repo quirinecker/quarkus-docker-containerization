@@ -4,4 +4,4 @@ WORKDIR /app
 
 COPY target/*-runner application
 
-CMD ["./application"]
+ENTRYPOINT ["./application"]

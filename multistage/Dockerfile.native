@@ -28,4 +28,4 @@ COPY --from=build /app/target/*-runner /app/application
 
 EXPOSE 8080
 
-CMD ["./application"]
+ENTRYPOINT ["./application"]
