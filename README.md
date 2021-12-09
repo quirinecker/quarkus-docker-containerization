@@ -37,6 +37,8 @@ The time it takes to start up the container.
 ./scripts/{method}-{type}.sh
 ```
 
+NOTE: GRAAL VM is required when running `external-native`
+
 ### run
 
 ```shell
