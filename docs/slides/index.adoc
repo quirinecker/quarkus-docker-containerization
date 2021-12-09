@@ -1,3 +1,87 @@
 = Quarkus Docker Images
+:imagesdir: ../images
 
-==
+== Types of building the Application
+
+[.columns]
+=== JVM
+
+[.column]
+--
+- Outputs Java Jar file
+- Runs in the Java Virtual Machine
+--
+
+[.column]
+--
+image:java.png[width=50%]
+--
+
+[.columns]
+=== Native
+
+[.column]
+--
+- Uses Graal VM to build
+- Runs as a native linux executable in the container
+- Every software needed to run the application is in the executable
+- No java required
+--
+
+[.column]
+--
+image:graal.png[]
+--
+
+== Methods of building the Docker Image
+
+[.columns]
+=== External
+
+[.column.is-full]
+--
+image:external.png[]
+--
+
+=== Singlestage
+
+--
+image:singlestage.png[]
+--
+
+[.columns]
+=== Multistage
+
+[.column.is-full]
+--
+image:multistage.png[]
+--
+
+== Resulting Docker Images
+
+6
+
+=== External Native Image
+
+=== External JVM Image
+
+=== Singlestage Native Image
+
+=== Singlestage JVM Image
+
+=== Multistage Native Image
+
+=== Multistage JVM Image
+
+== Evaluation
+
+=== Types Of Evaluations
+
+- **Compatibility:** Number of operating systems it is executable and buildable on
+- **Convenience:** Number of commands necessary to run the container
+- **Execution Time:** The time it takes to start up the container.
+- **Size:** The size of the Image
+
+=== Evaluation Table
+
+image::evaluation_table[]
