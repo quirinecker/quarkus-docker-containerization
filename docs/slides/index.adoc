@@ -134,7 +134,8 @@ image::multistage_code.png[]
 === Evaluation System
 
 - **OS:** GNU/Linux
-- **Processor:** Intel i7
+- **Processor:** Intel i7-7700k
+- **Prozessor Architektur:** x86-64
 - **Storage disk:** Samsung Evo SSD
 - **Memory:** 8GB
 
