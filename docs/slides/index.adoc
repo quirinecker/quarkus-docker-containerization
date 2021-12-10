@@ -140,7 +140,7 @@ image::multistage_code.png[]
 
 === Evaluation Table
 
-image::evaluation_table[]
+image::evaluation_table.png[]
 
 === More information
 
