@@ -1,5 +1,6 @@
-= Quarkus Docker Images
+= Quarkus Containerization
 :imagesdir: ../images
+:icons: font
 
 == Types of building the Application
 
@@ -22,9 +23,8 @@ image:java.png[width=50%]
 
 [.column]
 --
-- Uses Graal VM to build
-- Runs as a native linux executable in the container
-- Every software needed to run the application is in the executable
+- Uses Graal VM to build a native binary executable
+- The Executable contains every dependency except the env variables
 - No java required
 --
 
@@ -33,7 +33,9 @@ image:java.png[width=50%]
 image:graal.png[]
 --
 
-== Methods of building the Docker Image
+== Docker Image Build Strategies
+
+WARNING: Not official names
 
 [.columns]
 === External
@@ -43,10 +45,49 @@ image:graal.png[]
 image:external.png[]
 --
 
+[.columns]
+=== Pros and Cons
+
+[.column]
+--
+**Pros**
+
+- small image size
+- simple docker image
+--
+
+[.column]
+--
+**Cons**
+
+- more steps to run
+- dependant on the host system
+--
+
 === Singlestage
 
 --
 image:singlestage.png[]
+--
+
+[.columns]
+=== Pros and Cons
+
+[.column]
+--
+**Pros**
+
+- only two steps to run the container
+- not dependent on the host system
+--
+
+[.column]
+--
+**Cons**
+
+- big size
+- a bit longer build time
+** depends on the cache
 --
 
 [.columns]
@@ -57,21 +98,29 @@ image:singlestage.png[]
 image:multistage.png[]
 --
 
-== Resulting Docker Images
+[.columns]
+=== Pros and Cons
 
-6
+[.column]
+--
+**Pros**
 
-=== External Native Image
+- only two steps to run the container
+- not dependent on the host system
+- small image size
+--
 
-=== External JVM Image
+[.column]
+--
+**Cons**
 
-=== Singlestage Native Image
+- a bit longer build time
+** depends on the cache
+--
 
-=== Singlestage JVM Image
+== Multistage Docker
 
-=== Multistage Native Image
-
-=== Multistage JVM Image
+image::multistage_code.png[]
 
 == Evaluation
 
@@ -82,6 +131,17 @@ image:multistage.png[]
 - **Execution Time:** The time it takes to start up the container.
 - **Size:** The size of the Image
 
+=== Evaluation System
+
+- **OS:** GNU/Linux
+- **Processor:** Intel i7
+- **Storage disk:** Samsung Evo SSD
+- **Memory:** 8GB
+
 === Evaluation Table
 
 image::evaluation_table[]
+
+=== More information
+
+link:https://github.com/quirinecker/quarkus-docker-image[]
