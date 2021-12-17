@@ -2,7 +2,7 @@
 :imagesdir: ../images
 :icons: font
 
-== Types of building the Application
+== Buildtypes
 
 [.columns]
 === JVM
