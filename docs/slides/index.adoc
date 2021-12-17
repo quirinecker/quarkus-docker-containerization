@@ -1,6 +1,7 @@
 = Quarkus Containerization
 :imagesdir: ../images
 :icons: font
+:customcss: css/style.css
 
 == Buildtypes
 
